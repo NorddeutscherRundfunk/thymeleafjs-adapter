@@ -1,0 +1,24 @@
+{
+  "name": "thymeleafjs-adapter",
+  "version": "1.0.0",
+  "description": "This is a Fractal adapter for the thymeleaf-js template engine, this template engine was ported from Java to Js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "node": "node index.js"
+  },
+  "keywords": [
+    "Template-engine",
+    "js",
+    "Fractal",
+    "Thymeleaf",
+    "Html",
+    "Template"
+  ],
+  "author": "Robbie Bardijn",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@frctl/fractal": "^1.1.7",
+    "thymeleaf": "^0.14.0"
+  }
+}
