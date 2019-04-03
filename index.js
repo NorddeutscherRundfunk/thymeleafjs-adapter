@@ -2,8 +2,7 @@
 
 const Adapter  = require('@frctl/fractal').Adapter;
 const Thymeleaf = require('thymeleaf');
-//
-// console.log(Thymeleaf);
+
 class ThymeleafAdapter extends Adapter {
     render(path, str, context, meta) {
         let views = {};
