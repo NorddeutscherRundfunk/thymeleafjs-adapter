@@ -1,6 +1,6 @@
 # Thymeleaf Adapter
 
-Use Thymeleaf templates with [Fractal](http://github.com/frctl/fractal).
+Use [ThymeleafJs](https://github.com/ultraq/thymeleafjs) templates with [Fractal](http://github.com/frctl/fractal).
 
 ## Usage
 
@@ -17,5 +17,5 @@ fractal.components.engine('thymeleafjs-adapter');
 // register the thymeleaf engine adapter for your components
 
 fractal.components.set('ext', '.html');
-// look for files with a .thymeleaf file extension
+// look for files with a .html file extension
 ```

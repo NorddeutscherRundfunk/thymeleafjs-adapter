@@ -13,14 +13,13 @@ class ThymeleafAdapter extends Adapter {
 }
 
 module.exports = function() {
-  console.log("YOOOOOO");
   return {
     register(source, app) {
       let templateEngine = new Thymeleaf.TemplateEngine({
-       ...Thymeleaf.STANDARD_CONFIGURATION,
-      templateResolver: (templateName) => {
-        return fs.readFileSync(`./src/${templateName}.html`);
-      }
+         ...Thymeleaf.STANDARD_CONFIGURATION,
+        templateResolver: (templateName) => {
+          return fs.readFileSync(`./src/${templateName}.html`);
+        }
       });
       return new ThymeleafAdapter(templateEngine, source);
     }
