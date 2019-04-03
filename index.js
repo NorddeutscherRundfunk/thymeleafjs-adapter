@@ -1,22 +1,28 @@
 'use strict';
 
-const Adapter  = require('@frctl/fractal').Adapter;
+const Adapter = require('@frctl/fractal').Adapter;
 const Thymeleaf = require('thymeleaf');
-//
-// console.log(Thymeleaf);
+const fs = require('fs');
+
 class ThymeleafAdapter extends Adapter {
-    render(path, str, context, meta) {
-        let views = {};
-        this.views.forEach(view => (views[view.handle] = view.content));
-        Thymeleaf.templateEngine.process(str, context)
-        return Promise.resolve(this.engine.render(str, context, views));
-    }
+  render(path, str, context, meta) {
+    let views = {};
+    this.views.forEach(view => (views[view.handle] = view.content));
+    return this.engine.process(str, context);
+  }
 }
 
 module.exports = function() {
-    return {
-        register(source, app) {
-            return new ThymeleafAdapter(Thymeleaf, source);
-        }
+  console.log("YOOOOOO");
+  return {
+    register(source, app) {
+      let templateEngine = new Thymeleaf.TemplateEngine({
+       ...Thymeleaf.STANDARD_CONFIGURATION,
+      templateResolver: (templateName) => {
+        return fs.readFileSync(`./src/${templateName}.html`);
+      }
+      });
+      return new ThymeleafAdapter(templateEngine, source);
     }
+  }
 };
