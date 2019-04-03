@@ -17,5 +17,5 @@ fractal.components.engine('thymeleafjs-adapter');
 // register the thymeleaf engine adapter for your components
 
 fractal.components.set('ext', '.html');
-// look for files with a .thymeleaf file extension
+// look for files with a .html file extension
 ```
